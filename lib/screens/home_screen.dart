@@ -93,7 +93,8 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
+                ),
+                const Gap(8),
               ],
             ),
           ),
