@@ -12,7 +12,9 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: AppLayout.GetHeight(20), vertical: AppLayout.GetHeight(20)),
+        padding: EdgeInsets.symmetric(
+            horizontal: AppLayout.GetHeight(20),
+            vertical: AppLayout.GetHeight(20)),
         children: [
           Gap(AppLayout.GetHeight(40)),
           Text(
@@ -20,38 +22,45 @@ class SearchScreen extends StatelessWidget {
             style: Styles.headlineStyle1.copyWith(fontSize: 35),
           ),
           Gap(AppLayout.GetHeight(20)),
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  width: size.width * .44,
-                  padding:
-                      EdgeInsets.symmetric(vertical: AppLayout.GetHeight(7)),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(
-                        left: Radius.circular(AppLayout.GetHeight(50))),
-                    color: Colors.white,
+          FittedBox(
+            child: Container(
+              padding: const EdgeInsets.all(3.5),
+              child: Row(
+                children: [
+                  Container(
+                    width: size.width * .44,
+                    padding:
+                        EdgeInsets.symmetric(vertical: AppLayout.GetHeight(7)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(AppLayout.GetHeight(50))),
+                      color: Colors.white,
+                    ),
+                    child: const Center(
+                      child: Text("Airline Tickets"),
+                    ),
                   ),
-                  child: const Center(
-                    child: Text("Airline Tickets"),
+                  Container(
+                    width: size.width * .44,
+                    padding:
+                        EdgeInsets.symmetric(vertical: AppLayout.GetHeight(7)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.horizontal(
+                          right: Radius.circular(AppLayout.GetHeight(50))),
+                      color: Colors.transparent,
+                    ),
+                    child: const Center(
+                      child: Text("Hotels"),
+                    ),
                   ),
-                ),
-                Container(
-                  width: 130,
-                  padding: EdgeInsets.symmetric(vertical: AppLayout.GetHeight(7)),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(AppLayout.GetHeight(50))),
-                    color: Colors.transparent,
+                ],
+              ),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    AppLayout.GetHeight(50),
                   ),
-                  child: const Center(
-                    child: Text("Hotels"),
-                  ),
-                ),
-              ],
+                  color: const Color(0xFFF4F6FD)),
             ),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppLayout.GetHeight(50)),
-                color: const Color(0xFFF4F6FD)),
           ),
         ],
       ),
