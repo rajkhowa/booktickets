@@ -1,6 +1,7 @@
 import 'package:booktickets/screens/hotel_screen.dart';
 import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_info_list.dart';
+import 'package:booktickets/widgets/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -77,25 +78,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: Styles.headlineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("you are tapped");
-                      },
-                      child: Text(
-                        "View All",
-                        style: Styles.textStyle
-                            .copyWith(color: Styles.primaryColor),
-                      ),
-                    ),
-                  ],
-                ),
+                const AppDoubleTextWidget(
+                    bigText: "Upcoming Flights", smallText: "view all"),
                 const Gap(8),
               ],
             ),
@@ -113,25 +97,8 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: Styles.headlineStyle2,
-                ),
-                InkWell(
-                  onTap: () {
-                    print("you are tapped");
-                  },
-                  child: Text(
-                    "View All",
-                    style:
-                        Styles.textStyle.copyWith(color: Styles.primaryColor),
-                  ),
-                ),
-              ],
-            ),
+            child: const AppDoubleTextWidget(
+                bigText: "Hotels", smallText: "view all"),
           ),
           const Gap(15),
           SingleChildScrollView(
