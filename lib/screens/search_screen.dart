@@ -1,6 +1,7 @@
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/icone_text_widget.dart';
+import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -25,46 +26,9 @@ class SearchScreen extends StatelessWidget {
             style: Styles.headlineStyle1.copyWith(fontSize: 35),
           ),
           Gap(AppLayout.GetHeight(20)),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(3.5),
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  Container(
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.GetHeight(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(AppLayout.GetHeight(50))),
-                      color: Colors.white,
-                    ),
-                    child: const Center(
-                      child: Text("Airline Tickets"),
-                    ),
-                  ),
-                  Container(
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.GetHeight(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                          right: Radius.circular(AppLayout.GetHeight(50))),
-                      color: Colors.transparent,
-                    ),
-                    child: const Center(
-                      child: Text("Hotels"),
-                    ),
-                  ),
-                ],
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    AppLayout.GetHeight(50),
-                  ),
-                  color: const Color(0xFFF4F6FD)),
-            ),
+          const AppTicketTabs(
+            firstTab: "Airline Tickets",
+            secondTab: "Hotels",
           ),
           Gap(AppLayout.GetHeight(25)),
           const AppIconText(
